@@ -1,0 +1,293 @@
+{% load pwa %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics from @gmail.com -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178635415-1"></script> -->
+<!--   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-178635415-1');
+  </script> -->
+  {% progressive_web_app_meta %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title> {{ article.title }} - Blog | {{ site_details.title }}</title>
+  <meta content="Making a difference and imparting the world with my technical writing. | {{ site_details.description }}" name="descriptison">
+  <meta content="{{ site_details.keywords }}" name="keywords">
+
+  <!-- <meta name="google-site-verification" content="lzLKxEyBRXo3Z5iKdHIu98KsqOj9mc-DRIVAGIAY0Zg" /> -->
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static 'blog/img/apple-icon-57x57.png' %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'blog/img/apple-icon-60x60.png' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'blog/img/apple-icon-72x72.png' %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'blog/img/apple-icon-76x76.png' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'blog/img/apple-icon-114x114.png' %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'blog/img/apple-icon-120x120.png' %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'blog/img/apple-icon-144x144.png' %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'blog/img/apple-icon-152x152.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'blog/img/apple-icon-180x180.png' %}">
+  <link rel="apple-touch-icon" sizes="512x512" href="{% static 'blog/img/apple-icon-512x512.png' %}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'blog/img/android-icon-192x192.png' %}">
+  <link rel="icon" type="image/png" sizes="512x512"  href="{% static 'blog/img/android-icon-512x512.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/img/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'blog/img/favicon-96x96.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/img/favicon-16x16.png' %}">
+<!--   <link rel="manifest" href="{% static 'blog/manifest.json' %}"> -->
+  <meta name="msapplication-TileColor" content="#18d26e">
+  <meta name="msapplication-TileImage" content="{% static 'blog/img/ms-icon-144x144.png' %}">
+  <meta name="apple-mobile-web-app-status-bar" content="#18d26e" />
+  <meta name="theme-color" content="#18d26e" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'blog/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/animate/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'blog/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal - v2.3.0
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <div id="preloader"></div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header-tops header-top">
+    <div class="container">
+
+      <h1><a href="/">{{ site_details.name }}</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+
+      <h2>I'm <span>{{ site_details.title }}</span></h2>
+
+      <p class="intro-subtitle"><span class="text-slider-items">{{ site_details.site_slider }}</span><strong class="text-slider"></strong></p>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#resume">Resume</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#portfolio">Portfolio</a></li>
+          <li class="active"><a href="{% url 'blog:blog_index' %}">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="social-links">
+        {% if site_details.sitesocial_set.all %}
+        {% for social in site_details.sitesocial_set.all %}
+        <a href="{{ social.link }}" class="{{ social.social_media }}" target="_blank"><i class="icofont-{{ social.social_media }}"></i></a>
+        {% endfor %}
+        {% with site_details.sitesocial_set.all|first as link %}
+        <a href="{{ link.github }}" class="github" target="_blank"><i class="fab fa-github"></i></a>
+        {% endwith %} 
+        {% endif %}
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services section-show">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Blog</h2>
+        <div class="row">
+          <form  class="col-md-6" action='/blog/search/'>
+              <h4>
+                Search
+              </h4>
+              <input class="search-input" type="text" name='q' placeholder="Search...">
+
+              <button class="search-btn">
+                <i class="fa fa-search"></i>
+              </button>
+          </form>
+          <div class="col-md-6">
+            <div class="category">
+              <h4>
+                Categories
+              </h4>
+
+              <ul>
+                {% for category in blog_categories %}
+                <li>
+                  <a href="{% url 'blog:blog_category' category=category.article_category %}" >
+                    {{ category.article_category }}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div>
+            <img class="detail-image" src="{{ article.articleimage_set.all.0.image_file.url }}" alt="Header-Image">
+          </div>
+          <div>
+            <span>
+              <span>By</span> {{ article.author.name }} 
+              <span class="detail-mark">|</span>
+            </span>
+            <span>
+              {{ article.upload_date | date:'d M, Y' }}
+              <span class="detail-mark">|</span>
+            </span>
+            <span>
+              {% for category in article.categories.all %}{{ category.article_category }}, {% endfor%}
+              <span class="detail-mark">|</span>
+            </span>
+            <span>
+              {{ article.comment_set.all.count }} Comment{{ article.comment_set.all.count | pluralize }}
+            </span>
+            <h4 class="detail-head">
+              {{ article.title }}
+            </h4>
+            {% for video in article.articlevideo_set.all %}
+            <video controls="controls" class="video-fluid detail-img">
+              <source src="{{ video.video_file.url }}" type="video/mp4" />
+              Ops! Your browser does not support this video file
+            </video>
+            <h5>
+              {{ video.caption }}
+            </h5>
+            {% endfor %}
+            {% for text in article.articletext_set.all %}
+            <h5 class="detail-subhead">
+              {{ text.header }}
+            </h5>
+            <div class="detail-text">
+            {{ text.text }}
+            </div>
+            {% endfor %}
+            {% for image in article.articleimage_set.all %}
+            {% if forloop.counter == 1%}
+            {% else %}
+            <img src="{{ image.image_file.url }}" class="img-fluid detail-img">
+            <h5>
+              {{ image.caption }}
+            </h5>
+            {% endif %}
+            {% endfor %}
+          </div>
+          <!--  -->
+          <div>
+            <h5 class="comment-heading">
+              Leave a Comment
+            </h5>
+            <p>
+              Your email address will not be published. Required fields are marked *
+            </p>
+            <form method="POST" action="{% url 'blog:blog_comment' %}">
+              {% csrf_token %}        
+              <div>
+                <span>{{ comment_form.name }}</span>
+                <span>{{ comment_form.email }}</span>
+              </div>
+              <div>
+                {{ comment_form.website }}
+              </div>
+              <div>
+                {{ comment_form.comment }}
+              </div>
+              <div class="text-center">
+                <button class="btn comment-btn">
+                  Post Comment
+                </button>
+              </div>
+              <div>
+                {{ comment_form.article }}
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Comments -->
+          <div>
+          <h3>{{ comments.count }} Comment{{ comments.count | pluralize }}</h3>
+          </div>
+          {% for comment in comments %}
+          <div>
+            <div>
+              <span>
+                {{ comment.name }}
+              </span>
+              <span class="comment-date">
+                <i>{{ comment.upload_timestamp |date:'d M, Y'}} at {{ comment.upload_timestamp |date:'g:i a'}}</i>
+              </span>
+            </div>
+            <p>
+              {{ comment.comment }}
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section><!-- End Services Section -->
+
+  <div class="credits">
+    <!-- All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
+    <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> <strong> <a href="#header">{{ site_details.title }}</a></strong>. All Rights Reserved</p>
+    Made with <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a> by {{ site_details.name }}
+    <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+  </div>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'blog/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'blog/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'blog/js/typed.min.js' %}"></script>
+  <script src="{% static 'blog/vendor/sweetalert/sweetalert.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'blog/js/main.js' %}"></script>
+  <script type="text/javascript">
+  {% if form_status == 'success' %}
+  setTimeout(swal('Success Message', "Your comment has been successfully posted. Thanks for your generosity", "success"), 500)
+  {% endif %}
+  {% if form_status == 'fail' %}
+  setTimeout(swal('Error Message', "An error occured while trying to post your comment. Please try again\nWe dearly appologize for the incovenience", "danger"), 500)
+  {% endif %}
+</script>
+</body>
+
+</html>
