@@ -99,9 +99,9 @@ class Testimonials(models.Model):
 		verbose_name_plural = "Testimonials"
 
 class Education(models.Model):
-	title = models.CharField(max_length=30)
+	title = models.CharField(max_length=200)
 	years = models.CharField(max_length=30)
-	school_name = models.CharField(max_length=100)
+	school_name = models.CharField(max_length=500)
 	details = models.TextField()
 
 	def __str__(self):

@@ -4,15 +4,15 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics from @gmail.com -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178635415-1"></script> -->
-<!--   <script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-38H0TJ6VTF"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-178635415-1');
-  </script> -->
+    gtag('config', 'G-38H0TJ6VTF');
+  </script>
   {% progressive_web_app_meta %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -22,7 +22,6 @@
   <meta content="Making a difference and imparting the world with my technical writing. | {{ site_details.description }}" name="descriptison">
   <meta content="{{ site_details.keywords }}" name="keywords">
 
-  <!-- <meta name="google-site-verification" content="lzLKxEyBRXo3Z5iKdHIu98KsqOj9mc-DRIVAGIAY0Zg" /> -->
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="57x57" href="{% static 'blog/img/apple-icon-57x57.png' %}">
   <link rel="apple-touch-icon" sizes="60x60" href="{% static 'blog/img/apple-icon-60x60.png' %}">
@@ -183,7 +182,9 @@
               {{ text.header }}
             </h5>
             <div class="detail-text">
+            {% autoescape off %}
             {{ text.text }}
+            {% endautoescape %}
             </div>
             {% endfor %}
             {% for image in article.articleimage_set.all %}
