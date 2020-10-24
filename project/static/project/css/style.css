@@ -1492,3 +1492,42 @@ section .container {
 .detail-text {
   margin: 10px;
 }
+
+.not-found {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  background: white;
+  padding: 50px;
+  border-radius: 30px;
+  border: 3px solid #18d26e; 
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.8);
+  margin-top: 150px;
+}
+
+.not-found-head {
+  background: #000;
+  width: 100%;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 40px;
+  color: #ffffff;
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+  border: 3px solid #18d26e;
+}
+
+.not-found:hover {
+  background: #18d26e;
+  border: 3px solid white; 
+}
+
+.not-found-head:hover {
+  background: #fff;
+  color: #000000;
+  border: 3px solid white;
+}
